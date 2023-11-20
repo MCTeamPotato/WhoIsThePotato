@@ -1,6 +1,6 @@
 modLoader = "javafml"
 loaderVersion = "[36,)"
-license = "LGPL-v3"
+license = "Mozilla Public License Version 2.0"
 
 [[mods]]
 modId = "whoisthepotato"
