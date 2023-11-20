@@ -1,6 +1,6 @@
 modLoader = "javafml"
-loaderVersion = "[36,)"
-license = "LGPL-v3"
+loaderVersion = "[1,)"
+license = "Mozilla Public License Version 2.0"
 
 [[mods]]
 modId = "whoisthepotato"
@@ -11,9 +11,5 @@ description = '''
 A Minecraft Mod.
 '''
 
-[[dependencies.whoisthepotato]]
-modId = "forge"
-mandatory = true
-versionRange = "[36,)"
-ordering = "NONE"
-side = "BOTH"
+[[mixins]]
+config = "whoisthepotato.mixins.json"
