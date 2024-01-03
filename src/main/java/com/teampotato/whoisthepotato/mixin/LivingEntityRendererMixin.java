@@ -1,5 +1,6 @@
 package com.teampotato.whoisthepotato.mixin;
 
+import com.teampotato.whoisthepotato.WhoIsThePotato;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.world.entity.LivingEntity;
@@ -16,6 +17,9 @@ public abstract class LivingEntityRendererMixin {
             cancellable = true
     )
     private void viewOwnLabel(LivingEntity livingEntity, CallbackInfoReturnable<Boolean> ci) {
-        if (livingEntity == Minecraft.getInstance().cameraEntity) ci.setReturnValue(Minecraft.renderNames());
+        if (livingEntity == Minecraft.getInstance().cameraEntity) {
+            if (!WhoIsThePotato.SHOW_NAME_IN_GUI.get() && Minecraft.getInstance().screen != null) return;
+            ci.setReturnValue(Minecraft.renderNames());
+        }
     }
 }
